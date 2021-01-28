@@ -19,7 +19,7 @@ class Enrollment < ApplicationRecord
         foreign_key: :student_id,
         class_name: :User
 
-    validates :course_id, null: false
-    validates :student_id, null: false
+    validates :course_id, presence: true
+    validates :student_id, presence: true
 end
 
