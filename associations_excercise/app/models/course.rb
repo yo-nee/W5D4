@@ -17,9 +17,8 @@ class Course < ApplicationRecord
         class_name: :Enrollment
 
     has_many  :users,
-        primary_key: :id,
-        foreign_key: :enrollment_id,
-        class_name: :User
+        through: :enrollments,
+        source: :user
 
 
     validates :name, presence: true
